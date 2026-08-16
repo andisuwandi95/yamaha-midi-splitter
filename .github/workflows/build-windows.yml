@@ -18,18 +18,10 @@ jobs:
           python-version: "3.12"
 
       - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
+        run: python -m pip install --upgrade pip mido tkinterdnd2 pyinstaller
 
       - name: Build executable
-        run: |
-          pyinstaller --onefile --windowed `
-            --name YamahaMidiSplitter `
-            --add-data "data;data" `
-            --collect-all tkinterdnd2 `
-            --hidden-import mido `
-            app.py
+        run: python -m PyInstaller --onefile --windowed --name YamahaMidiSplitter --add-data "data;data" --collect-all tkinterdnd2 --hidden-import mido app.py
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
