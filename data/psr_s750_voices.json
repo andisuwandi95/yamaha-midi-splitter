@@ -1,0 +1,7 @@
+{
+  "instrument": "Yamaha PSR-S750",
+  "source": "Yamaha PSR-S750 Data List (populate from official document)",
+  "format_version": 1,
+  "exclude_msb": [62, 63],
+  "voices": []
+}
